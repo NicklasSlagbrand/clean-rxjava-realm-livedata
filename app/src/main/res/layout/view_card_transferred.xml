@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/purchased_card_width"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <com.nicklasslagbrand.placeholder.feature.main.card.PurchasedCardView
+        android:id="@+id/pcvCardViewTransferred"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCardTransferredTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorCardTransferred"
+        android:gravity="center"
+        android:minHeight="22dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
+        android:text="@string/cards_overview_transferred_card_title"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pcvCardViewTransferred"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pcvCardViewTransferred" />
+
+    <TextView
+        android:id="@+id/tvCardTransferredExplanationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/cards_overview_transferred_explanation_title"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliRegularTextAppearance"
+        android:textSize="15sp"
+        android:lineSpacingMultiplier="@integer/description_text_spacing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pcvCardViewTransferred" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

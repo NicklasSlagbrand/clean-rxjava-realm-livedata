@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="add_to_basket_margin_top">32dp</dimen>
+    <dimen name="total_basket_height">80dp</dimen>
+    <dimen name="no_cards_screen_title_margin_top">64dp</dimen>
+    <dimen name="attraction_info_dialog_bottom_margin">120dp</dimen>
+</resources>

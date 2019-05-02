@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="purchase_progress_bar_radius">5dp</dimen>
+    <dimen name="purchase_product_card_width">140dp</dimen>
+    <dimen name="purchase_product_card_text_size">50sp</dimen>
+
+    <dimen name="fab_card_menu_item_size">70dp</dimen>
+    <dimen name="fab_card_menu_item_icon_size">35dp</dimen>
+
+    <dimen name="cards_margin">-35dp</dimen>
+    <dimen name="purchased_card_width">305dp</dimen>
+
+    <dimen name="attraction_info_dialog_bottom_margin">120dp</dimen>
+
+    <dimen name="activate_card_qr_code_corner_radius">10dp</dimen>
+    <dimen name="activate_card_qr_code_width">250dp</dimen>
+    <dimen name="activate_card_qr_code_margin">40dp</dimen>
+
+    <dimen name="bar_code_view_corner_radius">22dp</dimen>
+    <dimen name="intro_phone_width">240dp</dimen>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.nicklasslagbrand.placeholder.view.NavigationMenuItem
+        android:id="@+id/btnNavigationMap"
+        style="@style/PlaceholerNavigationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:drawableTop="@drawable/ic_navigation_map"
+        android:text="@string/navigation_menu_maps_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavigationAttractions"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.nicklasslagbrand.placeholder.view.NavigationMenuItem
+        android:id="@+id/btnNavigationAttractions"
+        style="@style/PlaceholerNavigationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_navigation_attractions"
+        android:text="@string/navigation_menu_attractions_label"
+        app:layout_constraintBottom_toBottomOf="@+id/btnNavigationMap"
+        app:layout_constraintEnd_toStartOf="@+id/placeholder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/btnNavigationMap" />
+
+    <View
+        android:id="@+id/placeholder"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/btnNavigationMap"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavigationFavourites"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/btnNavigationAttractions"
+        app:layout_constraintTop_toTopOf="@+id/btnNavigationMap" />
+
+    <com.nicklasslagbrand.placeholder.view.NavigationMenuItem
+        android:id="@+id/btnNavigationFavourites"
+        style="@style/PlaceholerNavigationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_navigation_favourites"
+        android:text="@string/navigation_menu_favourites_label"
+        app:layout_constraintBottom_toBottomOf="@+id/btnNavigationMap"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavigationMenu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/placeholder" />
+
+    <com.nicklasslagbrand.placeholder.view.NavigationMenuItem
+        android:id="@+id/btnNavigationMenu"
+        style="@style/PlaceholerNavigationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_navigation_menu"
+        android:text="@string/navigation_menu_menu_label"
+        app:layout_constraintBottom_toBottomOf="@+id/btnNavigationMap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/btnNavigationFavourites"
+        app:layout_constraintTop_toTopOf="@+id/btnNavigationMap" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

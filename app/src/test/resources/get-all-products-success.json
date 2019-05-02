@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Adult 24 hours",
+    "validationTime": 24,
+    "price": [
+      {
+        "currencyCode": "EUR",
+        "price": 54
+      },
+      {
+        "currencyCode": "DKK",
+        "price": 64
+      },
+      {
+        "currencyCode": "USD",
+        "price": 74
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 84
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Adult 48 hours",
+    "validationTime": 48,
+    "category": {
+      "description": "Adult",
+      "id": 1
+    },
+    "price": [
+      {
+        "currencyCode": "EUR",
+        "price": 49
+      },
+      {
+        "currencyCode": "DKK",
+        "price": 59
+      },
+      {
+        "currencyCode": "USD",
+        "price": 69
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 79
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Adult 72 hours",
+    "validationTime": 72,
+    "price": [
+      {
+        "currencyCode": "EUR",
+        "price": 77
+      },
+      {
+        "currencyCode": "DKK",
+        "price": 87
+      },
+      {
+        "currencyCode": "USD",
+        "price": 97
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 107
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Adult 120 hours",
+    "validationTime": 120,
+    "price": [
+      {
+        "currencyCode": "EUR",
+        "price": 77
+      },
+      {
+        "currencyCode": "DKK",
+        "price": 87
+      },
+      {
+        "currencyCode": "USD",
+        "price": 97
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 107
+      }
+    ]
+  }
+]

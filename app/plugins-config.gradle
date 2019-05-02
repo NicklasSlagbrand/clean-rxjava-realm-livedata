@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'gnag'
+apply plugin: 'io.fabric'
+
+/*
+    Ktlint configuration section. Ktlint is an anti-bikeshedding Kotlin linter with built-in
+    formatter.
+    Link: https://github.com/shyiko/ktlint for mode details
+*/
+configurations {
+    ktlint
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "src/**/*.kt"
+    // to generate report in checkstyle format prepend following args:
+    // "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/ktlint.xml"
+    // see https://github.com/shyiko/ktlint#usage for more
+}
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}
+
+//detekt {
+//    toolVersion = "1.0.0-RC12"
+//}
+
+/*
+    Gnag is a Gradle plugin for Android projects that monitors
+    and reports on common violations.
+    Link: http://www.gnag.watch/
+*/
+gnag {
+    enabled true
+    failOnError true
+    ktlint {
+        enabled true
+        toolVersion "0.29.0"
+    }
+    androidLint {
+        enabled true
+        severity 'Error'
+    }
+    detekt {
+        enabled true
+        reporterConfig project.file('detekt-config.yml')
+    }
+}

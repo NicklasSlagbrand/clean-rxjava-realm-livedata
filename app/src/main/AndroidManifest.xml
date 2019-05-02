@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nicklasslagbrand.placeholder">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name="com.nicklasslagbrand.placeholder.AndroidApp"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.transfer.StartTransferCardActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.transfer.QrCodeScannerActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.transfer.FinishTransferCardActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.transfer.SuccessTransferCardActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.transfer.FailedTransferCardActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.main.attraction.AttractionDetailsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteBackground" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.purchase.PurchaseActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteBackground" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.main.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteBackground"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.start.StartActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentBarsTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.main.info.AppInfoActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentBarsTheme" />
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.main.info.AppLicensesActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentBarsTheme" />
+        <activity
+                android:name="com.nicklasslagbrand.placeholder.feature.main.message.MessageActivity"
+                android:configChanges="orientation"
+                android:screenOrientation="portrait"
+                android:theme="@style/TransparentBarsTheme" />
+
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.main.receive.ReceiveCardActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentBarsTheme" />
+
+        <activity
+            android:name="com.nicklasslagbrand.placeholder.feature.splash.SplashActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentBarsTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api_key" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="b2b0fa436cdee314b3b0c3ba04491d2df37dbd10" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="purchase_product_card_width">160dp</dimen>
+    <dimen name="purchase_product_card_text_size">50sp</dimen>
+    <dimen name="activate_card_qr_code_width">220dp</dimen>
+</resources>

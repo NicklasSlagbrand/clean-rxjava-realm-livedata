@@ -1,0 +1,26 @@
+<resources>
+    <style name="MuliExtraBoldTextAppearance">
+        <item name="android:fontFamily">@font/muli_extrabold</item>
+    </style>
+
+    <style name="MuliBoldTextAppearance">
+        <item name="android:fontFamily">@font/muli_bold</item>
+    </style>
+
+    <style name="MuliBlackTextAppearance">
+        <item name="android:fontFamily">@font/muli_black</item>
+    </style>
+
+    <style name="MuliRegularTextAppearance">
+        <item name="android:fontFamily">@font/muli_regular</item>
+    </style>
+
+    <style name="MuliExtraLightTextAppearance">
+        <item name="android:fontFamily">@font/muli_extralight</item>
+    </style>
+
+    <style name="MuliSemiBoldTextAppearance">
+        <item name="android:fontFamily">@font/muli_semibold</item>
+    </style>
+
+</resources>

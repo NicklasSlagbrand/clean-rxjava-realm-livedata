@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.purchase.PurchaseActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_close_purchase"
+        app:title="@string/button_buy_product"
+        app:titleTextColor="@android:color/white"
+        tools:context=".feature.purchase.PurchaseActivity" />
+
+    <TextView
+        android:id="@+id/tvSelectCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/progress_select_product"
+        android:textAppearance="@style/PurchaseScreen.StepText"
+        app:layout_constraintEnd_toStartOf="@+id/tvConfirmOrder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/tvConfirmOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/progress_confirm_order"
+        android:textAppearance="@style/PurchaseScreen.StepText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectCard"
+        app:layout_constraintEnd_toStartOf="@+id/tvPayment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/tvSelectCard"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectCard" />
+
+    <TextView
+        android:id="@+id/tvPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/progress_payment"
+        android:textAppearance="@style/PurchaseScreen.StepText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectCard"
+        app:layout_constraintEnd_toStartOf="@+id/tvCompleteOrder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/tvConfirmOrder"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectCard" />
+
+    <TextView
+        android:id="@+id/tvCompleteOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/progress_complete_order"
+        android:textAppearance="@style/PurchaseScreen.StepText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/tvPayment"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectCard" />
+
+    <ProgressBar
+        android:id="@+id/pbPurchaseProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectCard" />
+
+    <ProgressBar
+        android:id="@+id/pbPurchaseProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/vpFragmentsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbPurchaseProgress" />
+
+    <com.nicklasslagbrand.placeholder.feature.purchase.SwipelessViewPager
+        android:id="@+id/vpFragmentsContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbPurchaseProgress" />
+
+    <include
+        android:id="@+id/cvTotalSum"
+        layout="@layout/view_total_sum_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

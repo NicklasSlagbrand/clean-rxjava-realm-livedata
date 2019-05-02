@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "action": {
+      "code": "40401",
+      "source": "BEC",
+      "type": "paymenttypenotfound"
+    },
+    "message": {
+      "enduser": "The requested payment type or currency is not supported.",
+      "merchant": "The requested payment type or currency is not supported. This can be caused by a missing agreement for the used currency."
+    },
+    "result": false
+  },
+  "token": null,
+  "url": null
+}

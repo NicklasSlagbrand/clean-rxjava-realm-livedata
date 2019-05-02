@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white_1000">
+
+    <TextView
+        android:text="@string/consent_title_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvConsentTitle"
+        style="@style/MuliExtraBoldTextAppearance"
+        android:textSize="30sp"
+        android:textColor="@color/md_black_1000"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="38dp"
+        android:layout_marginTop="75dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:text="@string/consent_short_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvConsentDescrShort"
+        style="@style/MuliRegularTextAppearance"
+        android:textSize="15sp"
+        android:textColor="@color/md_black_1000"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsentTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="38dp"/>
+
+    <TextView
+        android:text="@string/consent_long_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvConsentDescrLong"
+        style="@style/MuliRegularTextAppearance"
+        android:textSize="15sp"
+        android:textColor="@color/md_black_1000"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsentDescrShort"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="38dp"/>
+
+    <TextView
+        android:id="@+id/tvConsentRef"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/MuliExtraBoldTextAppearance"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsentDescrLong"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="38dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConsentAgree"
+        style="@style/StartScreen.AgreeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/consent_agree_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConsentRef"
+        android:layout_marginTop="40dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConsentDisagree"
+        style="@style/StartScreen.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:includeFontPadding="false"
+        android:minHeight="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/consent_disagree_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsentAgree"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

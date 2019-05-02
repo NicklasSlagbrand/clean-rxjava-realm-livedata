@@ -1,0 +1,168 @@
+def versionMajor = 0
+def versionMinor = 4
+def versionPatch = 0
+def versionBuild = System.env["BITRISE_BUILD_NUMBER"] ?: "001"
+
+def versionNameForCI = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
+
+apply from: 'plugins-config.gradle'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion setup.compileSdk
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId setup.applicationId
+        minSdkVersion setup.minSdk
+        targetSdkVersion setup.targetSdk
+
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild.toInteger()
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_BASE_URL", "\"https://private-ca7a8-placeholderapi8.apiary-mock.com\""
+
+    }
+    signingConfigs {
+        debug {
+            storeFile file("./keys/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "main"
+    productFlavors {
+        dev {
+            dimension "main"
+            versionNameSuffix ".${versionBuild}.dev"
+
+            resValue "string", "google_maps_api_key", "AIzaSyAUjvfg4z4q3XPHGkhN1wX8nrESZKvvGxE"
+        }
+        prd {
+            dimension "main"
+
+            resValue "string", "google_maps_api_key", "AIzaSyAUjvfg4z4q3XPHGkhN1wX8nrESZKvvGxE"
+        }
+    }
+
+    lintOptions {
+        warning 'InvalidPackage'
+    }
+
+
+    // Ignore 'qaDebug' and 'devRelease' build variants that won't be used so tge build speed can be increased
+    variantFilter { variant ->
+        if (variant.name == "qaDebug" || variant.name == "devRelease") {
+            setIgnore(true)
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
+    implementation "com.android.support:design:$versions.supportLibrary"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
+    implementation "android.arch.lifecycle:extensions:$versions.lifecycleExt"
+    implementation "com.mikepenz:materialdrawer:$versions.materialDrawer"
+    implementation "com.github.crosswall:Android-Coverflow:$versions.coverFlow"
+    implementation "com.google.android.material:material:$versions.meterials"
+
+    implementation "com.journeyapps:zxing-android-embedded:${versions.zxingAndroid}"
+
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
+    implementation "com.romandanylyk:pageindicatorview:$versions.pageindicatorview"
+
+    implementation "com.jakewharton.timber:timber:$versions.timber"
+    implementation "org.koin:koin-android-viewmodel:$versions.koin"
+    implementation "net.danlew:android.joda:$versions.jodaTime"
+
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.loggingInterceptor"
+
+//    RxJava and RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin"
+
+//    Maps
+    implementation "com.google.android.gms:play-services-maps:$versions.maps"
+    implementation "com.google.android.gms:play-services-location:$versions.maps"
+    implementation "pub.devrel:easypermissions:$versions.easypermission"
+
+    implementation "com.getkeepsafe.taptargetview:taptargetview:$versions.taptargetview"
+
+
+//    Android Test
+    androidTestImplementation "com.android.support.test:runner:$versions.supportRunner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$versions.espressoRunner"
+
+//    Unit Test
+    testImplementation "junit:junit:$versions.junit"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
+    testImplementation "org.koin:koin-test:$versions.koin"
+    testImplementation "io.mockk:mockk:$versions.mockk"
+    testImplementation "org.amshove.kluent:kluent:$versions.kluent"
+    testImplementation "android.arch.core:core-testing:$versions.archCoreTesting"
+
+    ktlint "com.github.shyiko:ktlint:$versions.ktlint"
+}
+
+task performCheckAndQuickBuild(type: GradleBuild) {
+    group "Build"
+    description "Runs Unit tests and build DEBUG app variant (For that reason it builds fast)."
+    tasks = ["clean", "gnagCheck", "build"]
+}
+
+task performCheckAndFullBuild(type: GradleBuild) {
+    group "Build"
+    description "Runs Unit tests and build full app with all variants."
+    tasks = ["clean", "gnagReport", "build"]
+}
+
+// if the build was triggered by the pull request then performs full build otherwise runs quick
+// build
+task performBuild(type: GradleBuild) {
+    description "This build is designed to be triggered from CI"
+    group "Build"
+    if (System.env["BITRISE_PULL_REQUEST"] != null) {
+        println "Building the app for the PR"
+        tasks = ["performCheckAndFullBuild"]
+    } else {
+        println "Building the app for the commit"
+        tasks = ["performCheckAndQuickBuild"]
+    }
+}
+
+tasks.register("setVersionNameIntoEnv") {
+    group = "CI related"
+    description = "Creates env variable 'APP_VERSION_NAME' and sets its value to Application version name. Should be run only on Bitrise CI."
+
+    doFirst {
+        print "Setting version name env variable: " + "envman add --key APP_VERSION_NAME --value ${versionNameForCI}".execute().text
+    }
+}

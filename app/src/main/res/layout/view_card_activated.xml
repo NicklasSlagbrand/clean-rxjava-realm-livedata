@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/purchased_card_width"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/tvCardExpirationDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliExtraLightTextAppearance"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvExpiresTitle"
+        tools:text="28-02-2019" />
+
+    <TextView
+        android:id="@+id/tvCardExpirationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardExpirationDate"
+        tools:text="at 18:12" />
+
+    <com.nicklasslagbrand.placeholder.feature.main.card.PurchasedCardView
+        android:id="@+id/pcvCardViewActivated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardExpirationTime">
+
+    </com.nicklasslagbrand.placeholder.feature.main.card.PurchasedCardView>
+
+    <TextView
+        android:id="@+id/tvExpiresTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/cards_overview_expires_title"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/svTextSpace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activate_card_qr_code_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/pcvCardViewActivated"
+        app:layout_constraintLeft_toLeftOf="@id/pcvCardViewActivated"
+        app:layout_constraintRight_toRightOf="@id/pcvCardViewActivated" />
+
+    <ImageView
+        android:id="@+id/ivCardBarCode"
+        android:layout_width="@dimen/activate_card_qr_code_width"
+        android:layout_height="@dimen/activate_card_qr_code_width"
+        android:background="@drawable/drawable_qr_code_shadow"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/pcvCardViewActivated"
+        app:layout_constraintStart_toStartOf="@+id/pcvCardViewActivated"
+        app:layout_constraintTop_toBottomOf="@+id/svTextSpace"
+        tools:srcCompat="@tools:sample/avatars[9]" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTransferCardActivated"
+        style="@style/PlaceholerTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:includeFontPadding="false"
+        android:minHeight="0dp"
+        android:padding="0dp"
+        android:text="@string/cards_overview_transfer_card_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCardBarCode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main_screen"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@null"
+        tools:context=".feature.transfer.StartTransferCardActivity" />
+
+    <TextView
+        android:id="@+id/tvFirstPoint"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/drawable_background_transfer_point"
+        android:gravity="center"
+        android:text="@string/receive_step_one"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/tvFirstPointLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/transfer_card_is_ready_label"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFirstPoint"
+        app:layout_constraintStart_toEndOf="@+id/tvFirstPoint" />
+
+    <TextView
+        android:id="@+id/tvFirstPointDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/transfer_confirmation_label"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSecondPoint"
+        app:layout_constraintStart_toEndOf="@+id/tvSecondPoint"
+        app:layout_constraintTop_toTopOf="@+id/tvSecondPoint" />
+
+    <TextView
+        android:id="@+id/tvSecondPointLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/transfer_scan_qr_label"
+        android:textAppearance="@style/MuliExtraBoldTextAppearance"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvFirstPointLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFirstPointLabel" />
+
+    <TextView
+        android:id="@+id/tvSecondPointDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/transfer_your_card_transfered_label"
+        android:textAppearance="@style/MuliExtraBoldTextAppearance"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvFirstPointLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvFirstPointDescription" />
+
+    <TextView
+        android:id="@+id/tvSecondPoint"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/drawable_background_transfer_point"
+        android:gravity="center"
+        android:text="@string/receive_step_two"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecondPointLabel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnScan"
+        style="@style/PlaceholerMaterialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:includeFontPadding="false"
+        android:minWidth="160dp"
+        android:minHeight="60dp"
+        android:padding="0dp"
+        android:text="@string/scan_button"
+        android:textAppearance="@style/MuliBoldTextAppearance"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecondPointDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

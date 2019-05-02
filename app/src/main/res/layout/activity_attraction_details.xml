@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            android:theme="@style/WhiteToolbarBackArrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@null"
+            tools:context=".feature.main.attraction.AttractionDetailsActivity" />
+
+        <ImageView
+            android:id="@+id/ivAttractionImage"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic[17]" />
+
+        <TextView
+            android:id="@+id/tvCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_attraction_category_text"
+            android:paddingStart="10dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="6dp"
+            android:textAllCaps="true"
+            android:textAppearance="@style/MuliBoldTextAppearance"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAttractionImage"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Art &amp; Design" />
+
+        <ImageView
+            android:id="@+id/ivTextShadow"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:src="@drawable/drawable_attraction_title_shadow"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAttractionImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvAttractionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center_vertical|start"
+            android:textAppearance="@style/MuliExtraBoldTextAppearance"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAttractionImage"
+            tools:text="Design Museum Denmark" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnGetDirections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_direction"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/selector_fab_button"
+            app:borderWidth="0dp"
+            app:elevation="8dp"
+            app:fabCustomSize="44dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAttractionImage"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddRemoveFavorites"
+            app:layout_constraintTop_toBottomOf="@+id/ivAttractionImage"
+            app:maxImageSize="16dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAddRemoveFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_favorite_default"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/selector_fab_button"
+            app:borderWidth="0dp"
+            app:elevation="8dp"
+            app:fabCustomSize="44dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAttractionImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAttractionImage"
+            app:maxImageSize="16dp" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mvStaticMap"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttractionTitle"
+            map:liteMode="true"
+            map:cameraZoom="16"
+            map:mapType="normal" />
+
+        <com.nicklasslagbrand.placeholder.feature.main.attraction.OpeningHoursView
+            android:id="@+id/ohvAttractionOpening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mvStaticMap" />
+
+        <TextView
+            android:id="@+id/tvAttractionAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_attraction_location"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:textAppearance="@style/MuliRegularTextAppearance"
+            android:textColor="@color/searchGray"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ohvAttractionOpening"
+            tools:text="Kronprinsessegade 4, 1306 København" />
+
+        <TextView
+            android:id="@+id/tvAttractionLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_attraction_link"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:textAppearance="@style/MuliRegularTextAppearance"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttractionAddress"
+            tools:text="https://designmuseum.dk/" />
+
+        <ImageView
+            android:id="@+id/ivDetailsShadow"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="32dp"
+            android:rotation="180"
+            android:src="@drawable/drawable_total_sum_shadow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttractionLink"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvAttractionAnotherTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="30dp"
+            android:textAppearance="@style/MuliBoldTextAppearance"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDetailsShadow"
+            tools:text="Design Museum Denmark" />
+
+        <TextView
+            android:id="@+id/tvAttractionTeaser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="18dp"
+            android:textAppearance="@style/MuliExtraBoldTextAppearance"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttractionAnotherTitle"
+            tools:text="With a unique location in Copenhagen’s historic centre, near tourist attractions, the harbour boats, design companies and galleries, Designmuseum Danmark is a working archive and the entrance to Denmark as a design destination." />
+
+        <TextView
+            android:id="@+id/tvAttractionDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="32dp"
+            android:textAppearance="@style/MuliRegularTextAppearance"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttractionTeaser"
+            tools:text="Experience one of the world’s largest collections of Danish design, counting works by Finn Juhl, Arne Jacobsen, Poul Kjærholm, Verner Panton and Hans Wegner. In addition, the collections cover applied art and design from Art Nouveau to contemporary Danish design and include glass, ceramics, fashion, textile and poster art.
+
+The museum, situated right next to Amalienborg, is one of the finest examples of rococo architecture in Copenhagen. It offers thematic design exhibitions, special events, guided tours and workshops.
+
+Visitors are also invited to explore our beautiful garden, the café with indoor and outdoor service, the museum shop, and library." />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

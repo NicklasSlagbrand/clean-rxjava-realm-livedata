@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nsvScrollContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature.purchase.PurchaseActivity">
+
+        <TextView
+            android:id="@+id/tvConfirmScreenTitle"
+            style="@style/MuliRegularTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/confirm_screen_title"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvConfirmScreenTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvConfirmScreenTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_name_filed_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUserEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/tilUserName"
+            app:layout_constraintStart_toStartOf="@+id/tilUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tilUserName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_email_filed_hint"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUserConfirmEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/tilUserEmail"
+            app:layout_constraintStart_toStartOf="@+id/tilUserEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tilUserEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieUserConfirmEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_confirm_email_filed_hint"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvDigitalCardLabel"
+            style="@style/MuliRegularTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/confirm_digital_card_label"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDigitalCardIcon"
+            app:layout_constraintStart_toStartOf="@+id/tilUserConfirmEmail"
+            app:layout_constraintTop_toTopOf="@+id/ivDigitalCardIcon" />
+
+        <ImageView
+            android:id="@+id/ivDigitalCardIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/tilUserConfirmEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tilUserConfirmEmail"
+            app:srcCompat="@drawable/ic_digital_card"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvBasketLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/basket_label"
+            android:textAppearance="@style/MuliExtraBoldTextAppearance"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/tvDigitalCardLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvDigitalCardLabel" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBasketList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/ivDigitalCardIcon"
+            app:layout_constraintStart_toStartOf="@+id/tvDigitalCardLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvBasketLabel"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_basket_product" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTermsAndConditions"
+            style="@style/PlaceholerTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/confirm_terms_conditions_label"
+            app:layout_constraintStart_toStartOf="@+id/rvBasketList"
+            app:layout_constraintTop_toBottomOf="@+id/rvBasketList" />
+
+        <CheckBox
+            android:id="@+id/cbTermsAndConditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/btnTermsAndConditions"
+            app:layout_constraintEnd_toEndOf="@+id/rvBasketList"
+            app:layout_constraintTop_toTopOf="@+id/btnTermsAndConditions" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToPayment"
+            style="@style/PlaceholerMaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/confirm_to_payment_button_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cbTermsAndConditions"
+            app:layout_constraintStart_toStartOf="@+id/btnTermsAndConditions"
+            app:layout_constraintTop_toBottomOf="@+id/btnTermsAndConditions" />
+
+        <ProgressBar
+            android:id="@+id/pbConfirmProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cbTermsAndConditions"
+            app:layout_constraintStart_toStartOf="@+id/btnTermsAndConditions"
+            app:layout_constraintTop_toBottomOf="@+id/btnTermsAndConditions" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "action": {
+      "code": "20000",
+      "source": "BEC",
+      "type": "success"
+    },
+    "message": {
+      "enduser": "Success",
+      "merchant": "Success"
+    },
+    "result": true
+  },
+  "token": "8f80d44d49fe4d608bf242f4cc05c750",
+  "url": "https://v1.checkout.bambora.com/8f80d44d49fe4d608bf242f4cc05c750"
+}

@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "title": "Tivoli Gardens",
+    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+    "discount": "No discount",
+    "category": {
+      "id": 96,
+      "title": "Family & Fun"
+    },
+    "contactInfo": {
+      "phone": "4731 0773",
+      "web": "http://www.jfwillumsensmuseum.dk",
+      "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+    },
+    "openinghours": [
+      {
+        "startDate": "2019-01-02",
+        "endDate": "2019-12-22",
+        "days": [
+          {
+            "name": "monday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "tuesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "wednesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "thursday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "friday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "saturday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "sunday",
+            "opening": "11:00",
+            "closing": "23:00"
+          }
+        ]
+      }
+    ],
+    "location": {
+      "latitude": 55.674541,
+      "longitude": 12.56519
+    },
+    "imageUrl": [
+      "https://via.placeholder.com/1024x768"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Amelienborg",
+    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+    "discount": "No discount",
+    "category": {
+      "id": 91,
+      "title": "Royal"
+    },
+    "contactInfo": {
+      "phone": "4731 0773",
+      "web": "http://www.jfwillumsensmuseum.dk",
+      "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+    },
+    "openinghours": [
+      {
+        "startDate": "2019-01-02",
+        "endDate": "2019-12-22",
+        "days": [
+          {
+            "name": "monday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "tuesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "wednesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "thursday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "friday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "saturday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "sunday",
+            "opening": "11:00",
+            "closing": "23:00"
+          }
+        ]
+      }
+    ],
+    "location": {
+      "latitude": 55.68442,
+      "longitude": 12.59337
+    },
+    "imageUrl": [
+      "https://via.placeholder.com/1024x768"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Danish Architecture Center",
+    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+    "discount": "No discount",
+    "category": {
+      "id": 256,
+      "title": "Art & Design"
+    },
+    "contactInfo": {
+      "phone": "4731 0773",
+      "web": "http://www.jfwillumsensmuseum.dk",
+      "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+    },
+    "openinghours": [
+      {
+        "startDate": "2019-01-02",
+        "endDate": "2019-12-22",
+        "days": [
+          {
+            "name": "monday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "tuesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "wednesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "thursday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "friday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "saturday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "sunday",
+            "opening": "11:00",
+            "closing": "23:00"
+          }
+        ]
+      }
+    ],
+    "location": {
+      "latitude": 55.67208,
+      "longitude": 12.57918
+    },
+    "imageUrl": [
+      "https://via.placeholder.com/1024x768"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "The National Museum",
+    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+    "discount": "No discount",
+    "category": {
+      "id": 191,
+      "title": "History"
+    },
+    "contactInfo": {
+      "phone": "4731 0773",
+      "web": "http://www.jfwillumsensmuseum.dk",
+      "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+    },
+    "openinghours": [
+      {
+        "startDate": "2019-01-02",
+        "endDate": "2019-12-22",
+        "days": [
+          {
+            "name": "monday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "tuesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "wednesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "thursday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "friday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "saturday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "sunday",
+            "opening": "11:00",
+            "closing": "23:00"
+          }
+        ]
+      }
+    ],
+    "location": {
+      "latitude": 55.6745,
+      "longitude": 12.57469
+    },
+    "imageUrl": [
+      "https://via.placeholder.com/1024x768"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Canal Tours Copenhagen",
+    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+    "discount": "No discount",
+    "category": {
+      "id": 276,
+      "title": "Sightseeing tours"
+    },
+    "contactInfo": {
+      "phone": "4731 0773",
+      "web": "http://www.jfwillumsensmuseum.dk",
+      "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+    },
+    "openinghours": [
+      {
+        "startDate": "2019-01-02",
+        "endDate": "2019-12-22",
+        "days": [
+          {
+            "name": "monday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "tuesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "wednesday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "thursday",
+            "opening": "11:00",
+            "closing": "23:00"
+          },
+          {
+            "name": "friday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "saturday",
+            "opening": "11:00",
+            "closing": "00:00"
+          },
+          {
+            "name": "sunday",
+            "opening": "11:00",
+            "closing": "23:00"
+          }
+        ]
+      }
+    ],
+    "location": {
+      "latitude": 55.67721,
+      "longitude": 12.58163
+    },
+    "imageUrl": [
+      "https://via.placeholder.com/1024x768"
+    ]
+  }
+]

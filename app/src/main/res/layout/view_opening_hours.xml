@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutOpeningHoursHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp">
+
+        <TextView
+            android:id="@+id/tvAttractionOpening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_opening_schedule"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:text="@string/details_opening_hours_label"
+            android:textAppearance="@style/MuliRegularTextAppearance"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivOpeningHoursArrow"
+            android:layout_width="21dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:rotation="180"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAttractionOpening"
+            app:layout_constraintStart_toEndOf="@+id/tvAttractionOpening"
+            app:layout_constraintTop_toTopOf="@+id/tvAttractionOpening"
+            app:srcCompat="@drawable/ic_opening_hours_arrow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOpeningHoursList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutOpeningHoursHeader"
+        tools:itemCount="5"
+        tools:visibility="visible"
+        tools:listitem="@layout/item_opening_hour" />
+</merge>

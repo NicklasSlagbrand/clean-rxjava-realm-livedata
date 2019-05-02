@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#389168</color>
+    <color name="colorPrimaryLight">#80389168</color>
+    <color name="colorPrimaryDark">#134E33</color>
+
+    <color name="colorAccent">#134E33</color>
+
+    <color name="searchGray">#8F8F8F</color>
+    <color name="greenColorOrks">#32825d</color>
+    <color name="greenColorLeaf">#1e553e</color>
+    <color name="greenColorPlaceholer">#307c59</color>
+
+    <color name="colorCardNotActivated">#E7C201</color>
+    <color name="colorCardExpired">#E71919</color>
+    <color name="colorCardTransferred">#F3683D</color>
+    <color name="colorCardPending">#F3F3F3</color>
+    <color name="colorPurchaseProgressBackground">#808F8F8F</color>
+    <color name="colorNavigationItemNotSelected">#8F8F8F</color>
+    <color name="colorNavigationCardButtonNotSelected">#737373</color>
+
+    <color name="colorCategoryArt">#f3683d</color>
+    <color name="colorCategoryFun">#6BC051</color>
+    <color name="colorCategoryHistory">#8F8F8F</color>
+    <color name="colorCategoryRoyal">#E71919</color>
+    <color name="colorCategorySight">#7217B3</color>
+    <color name="colorCategoryDiscount">#E7C201</color>
+
+    <color name="colorRemovePersonButtonDisabled">#9CC6B2</color>
+    <color name="colorAddToBasketButtonDisabled">#B6B5B5</color>
+    <color name="colorRedeemButton">#8e8f8f</color>
+
+    <!-- Override MaterialDrawer default colors -->
+    <color name="material_drawer_background">@color/colorPrimary</color>
+    <color name="translucentBackgroundSearch">#66000000</color>
+
+    <color name="colorLightBlack">#59141414</color>
+    <color name="colorDarkBlack">#FF000000</color>
+</resources>

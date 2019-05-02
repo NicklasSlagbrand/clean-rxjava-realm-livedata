@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    tools:context=".feature.main.receive.ReceiveCardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_main_screen">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@null" />
+
+        <TextView
+            android:id="@+id/tvStepOne"
+            style="@style/MuliBlackTextAppearance"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bg_dark_circle_drawable"
+            android:paddingStart="9dp"
+            android:paddingTop="2dp"
+            android:text="@string/receive_step_one"
+            android:textColor="@color/md_white_1000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvReadyToReceive"
+            style="@style/MuliBlackTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="27dp"
+            android:text="@string/receive_ready_card"
+            android:textColor="@color/md_black_1000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvStepOne"
+            app:layout_constraintTop_toTopOf="@+id/tvStepOne" />
+
+        <TextView
+            android:id="@+id/tvReceiveAsk"
+            style="@style/MuliExtraBoldTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/receive_ask_friend"
+            android:textColor="@color/md_black_1000"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvReadyToReceive"
+            app:layout_constraintStart_toEndOf="@+id/tvStepOne"
+            app:layout_constraintTop_toBottomOf="@+id/tvReadyToReceive" />
+
+        <ImageView
+            android:id="@+id/ivCardBarCode"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/drawable_qr_code_shadow"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReceiveAsk"
+            tools:srcCompat="@tools:sample/avatars[9]" />
+
+        <TextView
+            android:id="@+id/tvStepTwo"
+            style="@style/MuliBlackTextAppearance"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_dark_circle_drawable"
+            android:paddingStart="9dp"
+            android:paddingTop="2dp"
+            android:text="@string/receive_step_two"
+            android:textColor="@color/md_white_1000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCardBarCode" />
+
+        <TextView
+            android:id="@+id/tvReceiveConfirm"
+            style="@style/MuliBlackTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="27dp"
+            android:text="@string/receive_check_id"
+            android:textColor="@color/md_black_1000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvStepTwo"
+            app:layout_constraintTop_toTopOf="@+id/tvStepTwo" />
+
+        <TextView
+            android:id="@+id/tvReceiveAsk2"
+            style="@style/MuliExtraBoldTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_black_1000"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvReceiveConfirm"
+            app:layout_constraintStart_toStartOf="@+id/tvReceiveConfirm"
+            attrs:layout_constraintTop_toBottomOf="@+id/tvReceiveConfirm"
+            tools:text="ffffffff-fasfads-fdfsdf-sdfsfsfdsfsf" />
+
+        <TextView
+            android:id="@+id/tvStepThree"
+            style="@style/MuliBlackTextAppearance"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_dark_circle_drawable"
+            android:paddingStart="9dp"
+            android:paddingTop="2dp"
+            android:text="3"
+            android:textColor="@color/md_white_1000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReceiveAsk2" />
+
+        <TextView
+            android:id="@+id/tvReceiveConfirm3"
+            style="@style/MuliBlackTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/received_when_friend_confirmed"
+            android:textColor="@color/md_black_1000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvStepThree"
+            attrs:layout_constraintTop_toTopOf="@+id/tvStepThree" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoToMyCards"
+            style="@style/StartScreen.AgreeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/btn_receive_go_to_my_cards"
+            android:translationZ="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReceiveConfirm3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

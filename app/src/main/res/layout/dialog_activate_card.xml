@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drawable_background_activate_card">
+
+    <TextView
+        android:id="@+id/tvActivateCardQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/activate_card_question_label"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliExtraBoldTextAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvActivateCardDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/activate_card_description_label"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliExtraBoldTextAppearance"
+        android:textColor="@android:color/white"
+        android:lineSpacingMultiplier="1.27"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvActivateCardQuestion" />
+
+    <com.nicklasslagbrand.placeholder.view.SlideToActView
+        android:id="@+id/savSlideToActivate"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvActivateCardDescription"
+        app:outer_border_width="2dp"
+        app:outer_color="@color/colorPrimaryDark"
+        app:rotate_icon="false"
+        app:animate_completion="false"
+        app:slider_icon="@drawable/ic_swipe_to_activate"
+        app:text="@string/activate_card_swipe_label" />
+
+    <Button
+        android:id="@+id/btnCancelActivation"
+        style="@style/StartScreen.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/cancel_button"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savSlideToActivate" />
+
+    <ProgressBar
+        android:id="@+id/pbActivationProgress"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        android:indeterminateTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvActivateCardDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

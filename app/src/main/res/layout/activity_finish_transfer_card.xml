@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main_screen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/drawable_background_activate_card">
+
+        <TextView
+            android:id="@+id/tvActivateCardQuestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/transfer_card_confirmation"
+            android:textAlignment="center"
+            android:textAppearance="@style/MuliExtraBoldTextAppearance"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvActivateCardDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:lineSpacingMultiplier="1.27"
+            android:text="@string/transfer_card_confirmation_description"
+            android:textAlignment="center"
+            android:textAppearance="@style/MuliExtraBoldTextAppearance"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvActivateCardQuestion" />
+
+        <TextView
+            android:id="@+id/tvActivateCardReceiversIdLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:lineSpacingMultiplier="1.27"
+            android:text="Receiver's ID:"
+            android:textAlignment="center"
+            android:textAppearance="@style/MuliExtraBoldTextAppearance"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvActivateCardDescription" />
+
+        <TextView
+            android:id="@+id/tvActivateCardReceiversId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:lineSpacingMultiplier="1.27"
+            android:textAlignment="center"
+            android:textAppearance="@style/MuliRegularTextAppearance"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvActivateCardReceiversIdLabel"
+            tools:text="2fc4b5912826ad1" />
+
+        <com.nicklasslagbrand.placeholder.view.SlideToActView
+            android:id="@+id/savSlideToTransfer"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:animate_completion="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvActivateCardReceiversId"
+            app:outer_border_width="2dp"
+            app:outer_color="@color/colorPrimaryDark"
+            app:rotate_icon="false"
+            app:slider_icon="@drawable/ic_swipe_to_activate"
+            app:text="@string/transfer_card_slider" />
+
+        <Button
+            android:id="@+id/btnCancelTransfer"
+            style="@style/StartScreen.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/cancel_button"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savSlideToTransfer" />
+
+        <ProgressBar
+            android:id="@+id/pbTransferProgress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:indeterminateTint="@android:color/white"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvActivateCardReceiversId" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

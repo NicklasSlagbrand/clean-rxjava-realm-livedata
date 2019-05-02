@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbRemovePerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_remove_person"
+        app:backgroundTint="@color/selector_fab_button"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabCustomSize="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPersonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvSectionTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSectionTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="99" />
+
+    <TextView
+        android:id="@+id/tvSectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:minWidth="60dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/MuliRegularTextAppearance"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/fbRemovePerson"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonCount"
+        tools:text="@string/purchase_category1_group_text" />
+
+    <TextView
+        android:id="@+id/tvTotalSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/MuliBlackTextAppearance"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvSectionTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSectionTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSectionTitle"
+        tools:text="93 €" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbAddPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_add_person"
+        app:backgroundTint="@color/selector_fab_button"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabCustomSize="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvSectionTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+</merge>

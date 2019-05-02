@@ -1,0 +1,61 @@
+{
+  "orderReference": "1234",
+  "orderStatus": "completed",
+  "cardsQty": 5,
+  "cards": [{
+    "id": 1234,
+    "validationTime": 24,
+    "category": {
+      "description": "adult",
+      "id": 1
+    },
+    "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+    "status": "expired",
+    "expirationDate": "2018-12-19T14:10:37+0000"
+  }, {
+    "id": 1456,
+    "validationTime": 48,
+    "category": {
+      "description": "adult",
+      "id": 1
+    },
+    "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+    "status": "transferred",
+    "expirationDate": "2019-01-14T14:10:37+0000"
+  },
+    {
+      "id": 1567,
+      "validationTime": 72,
+      "category": {
+        "description": "child",
+        "id": 2
+      },
+      "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+      "status": "valid",
+      "expirationDate": "2019-02-07T14:10:37+0000"
+    },
+    {
+      "id": 1567,
+      "validationTime": 72,
+      "category": {
+        "description": "adult",
+        "id": 1
+      },
+      "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+      "status": "valid",
+      "expirationDate": "2019-02-09T14:10:37+0000"
+    },
+    {
+      "id": 1568,
+      "validationTime": 48,
+      "category": {
+        "description": "child",
+        "id": 2
+      },
+      "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+      "status": "inactive",
+      "expirationDate": ""
+    }
+  ]
+
+}
