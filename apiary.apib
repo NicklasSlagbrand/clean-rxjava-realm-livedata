@@ -1,80 +1,809 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# PlaceholderAPI
+# Cleam-RxJava-Realm-Livedata
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Content Type updated on all request Headers
 
-## Questions Collection [/questions]
+## Authorization [/rest/session/token]
 
-### List All Questions [GET]
+### X-CSRF-Token [GET]
 
-+ Response 200 (application/json)
+Before being able to make any POST to any of the endpoints, CRF-token must be aquired.
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
 
-### Create a New Question [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Request (application/json)
+    + Headers
+
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU=
+            
++ Response 200 (text/plain)
+    + Body
+
+            EbQN0T46HLAUQMaPrV0IQ6GO0YtSsg5M4aTvBPXeoOc
+
+        
+## Attractions [/api/attractions{?language,content,_format}]
+
+### List All Attractions [GET]
+
+You will recieve a array of attraction objects coantining full information
+about attractions supported by the copenhagen card.
 
 + Request (application/json)
 
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
++ Parameters
+    + language - A path defining language on response."da" or "en"
+    + content - required to give full attraction info. Setting value to "full" gives all content of a attraction
+    + _format - response format should always be "json"
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
+ + Body
+
+                [
+                  {
+                    "id": 1,
+                    "title": "Tivoli Gardens",
+                    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+                    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+                    "discount":"No discount",
+                    "category": {
+                      "id": 96,
+                      "title": "Family & Fun"
+                    },
+                    "contactInfo": {
+                        "phone": "4731 0773",
+                        "web": "http://www.jfwillumsensmuseum.dk",
+                        "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+                    },
+                    "openinghours": [
+                        {
+                            "startDate": "2019-01-02",
+                            "endDate": "2019-12-22",
+                            "days": [
+                                {
+                                    "name": "monday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "tuesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "wednesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "thursday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "friday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "saturday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "sunday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                }
+                            ]
+                        }
+                            
+                    ],
+                    "location": {
+                      "latitude": 55.674541,
+                      "longitude": 12.56519
+                    },
+                    "imageUrl": [
+                      "https://via.placeholder.com/1024x768"
+                    ]
+                  },
+                  {
+                    "id": 2,
+                    "title": "Amelienborg",
+                    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+                    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+                    "discount":"No discount",
+                    "category": {
+                      "id": 91,
+                      "title": "Royal"
+                    },
+                    "contactInfo": {
+                        "phone": "4731 0773",
+                        "web": "http://www.jfwillumsensmuseum.dk",
+                        "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+                    },
+                    "openinghours": [
+                        {
+                            "startDate": "2019-01-02",
+                            "endDate": "2019-12-22",
+                            "days": [
+                                {
+                                    "name": "monday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "tuesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "wednesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "thursday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "friday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "saturday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "sunday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                }
+                            ]
+                        }
+                            
+                    ],
+                    "location": {
+                      "latitude": 55.68442,
+                      "longitude": 12.59337
+                    },
+                    "imageUrl": [
+                      "https://via.placeholder.com/1024x768"
+                    ]
+                  },
+                  {
+                    "id": 3,
+                    "title": "Danish Architecture Center",
+                    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+                    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+                    "discount":"No discount",
+                    "category": {
+                      "id": 256,
+                      "title": "Art & Design"
+                    },
+                    "contactInfo": {
+                        "phone": "4731 0773",
+                        "web": "http://www.jfwillumsensmuseum.dk",
+                        "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+                    },
+                    "openinghours": [
+                        {
+                            "startDate": "2019-01-02",
+                            "endDate": "2019-12-22",
+                            "days": [
+                                {
+                                    "name": "monday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "tuesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "wednesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "thursday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "friday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "saturday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "sunday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                }
+                            ]
+                        }
+                            
+                    ],
+                    "location": {
+                      "latitude": 55.67208,
+                      "longitude": 12.57918
+                    },
+                    "imageUrl": [
+                      "https://via.placeholder.com/1024x768"
+                    ]
+                  },
+                  {
+                    "id": 4,
+                    "title": "The National Museum",
+                    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+                    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+                    "discount":"No discount",
+                    "category": {
+                      "id": 191,
+                      "title": "History"
+                    },
+                    "contactInfo": {
+                        "phone": "4731 0773",
+                        "web": "http://www.jfwillumsensmuseum.dk",
+                        "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+                    },
+                    "openinghours": [
+                        {
+                            "startDate": "2019-01-02",
+                            "endDate": "2019-12-22",
+                            "days": [
+                                {
+                                    "name": "monday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "tuesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "wednesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "thursday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "friday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "saturday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "sunday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                }
+                            ]
+                        }
+                            
+                    ],
+                    "location": {
+                      "latitude": 55.6745,
+                      "longitude": 12.57469
+                    },
+                    "imageUrl": [
+                      "https://via.placeholder.com/1024x768"
+                    ]
+                  },
+                  {
+                    "id": 5,
+                    "title": "Canal Tours Copenhagen",
+                    "teaser": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>",
+                    "description": "<p><strong>Museet viser kunstværker af den kontroversielle og banebrydende danske kunstner J.F. Willumsen (1863-1958)</strong></p>\n<p>Oplev Willumsens store farveglæde og sprudlende skabertrang indenfor både maleri, skulptur, grafik, fotografi, keramik og arkitektur samt spektakulære værker fra hans samling af ældre europæisk kunst.</p>\n<p>Museet har desuden en VÆRKboks - en interaktiv kasse til udlån. VÆRKboksen kan guide børn til udvalgte værker af Willumsen og i museets underetage kan børnene male og tegne selv.</p>",
+                    "discount":"No discount",
+                    "category": {
+                      "id": 276,
+                      "title": "Sightseeing tours"
+                    },
+                    "contactInfo": {
+                        "phone": "4731 0773",
+                        "web": "http://www.jfwillumsensmuseum.dk",
+                        "address": "Jenriksvej 4 , Frederikssund 3600 DK"
+                    },
+                    "openinghours": [
+                        {
+                            "startDate": "2019-01-02",
+                            "endDate": "2019-12-22",
+                            "days": [
+                                {
+                                    "name": "monday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "tuesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "wednesday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "thursday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                },
+                                {
+                                    "name": "friday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "saturday",
+                                    "opening": "11:00",
+                                    "closing": "00:00"
+                                },
+                                {
+                                    "name": "sunday",
+                                    "opening": "11:00",
+                                    "closing": "23:00"
+                                }
+                            ]
+                        }
+                            
+                    ],
+                    "location": {
+                      "latitude": 55.67721,
+                      "longitude": 12.58163
+                    },
+                    "imageUrl": [
+                      "https://via.placeholder.com/1024x768"
+                    ]
+                  }
+          
+                ]   
+
+
+## Activate card [/api/cards/{id}/activate{?_format}]
+
+### Activate card [POST]
+
+Request to activate card and attach device id & expiration date.
+Dateformat is ISO 8601
+activationDate - Activation date for public transport. Expiration date is calculated serverside based on activationDate and the calidation time on card.
+deviceId - Device identifier
+
+
++ Request (application/json)
     + Headers
 
-            Location: /questions/2
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU= 
+            X-CSRF-Token: EbQN0T46HLAUQMaPrV0IQ6GO0YtSsg5M4aTvBPXeoOc
+        
+    + Body
+
+            {
+               "deviceId": "thisismydeviceid",
+               "activationDate": "2018-12-19T14:10:37+0000"
+            }
+
++ Parameters
+    + id - A path defining language on response.
+    + _format - response format should always be "json"
+
+
+
++ Response 200 (application/json)
+     + Body
+
+            {
+               "expirationDate": "2018-12-19T14:10:37+0000"
+            }
+
+
+
+       
+## Create Order [/api/order/create]
+
+### Create order [POST]
+
+Create order before payment. This order has to be confirmed after payment to be completed.
+
+STATUSES:
+
+pending,error
+
+
+
+
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU= 
+            X-CSRF-Token: EbQN0T46HLAUQMaPrV0IQ6GO0YtSsg5M4aTvBPXeoOc
+            
+    + Body
+
+            {
+                "deviceId": "",
+                "orderName": "",
+                "orderEmail": "",
+                "orderDeliveryType": "Mobile ticketing",
+                "orderProducts": [
+                    {
+                        "qty":2,
+                        "id":"1"
+                    },
+                    {
+                        "qty":1,
+                        "id":"2"
+                    },
+                    {
+                        "qty":1,
+                        "id":"7"
+                    }
+                ]
+            }
+
+
+
+
+
+
++ Response 200 (application/json)
+
 
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "orderReference": "AA402",
+                "status": "pending"
+                
             }
+
+            
+## Orders [/api/cards{?language,deviceId,_format}]
+
+### List All Cards [GET]
+
+List all cards connected to a device ID.
+
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU=
+
++ Parameters
+    + language - define language should be returned.
+    + deviceId - device identifier.
+    + _format - json
+
+
++ Response 200 (application/json)
+
+ + Body
+
+            [
+                {
+                    "orderReference": "1234",
+                    "orderStatus": "completed",
+                    "cardsQty":6,
+                    "cards":
+                         [
+                                    {
+                                        "id": 1234,
+                                        "validationTime": 24,
+                                        "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                                        "status": "expired",
+                                        "expirationDate": "2018-12-19T14:10:37+0000"
+                                    },
+                                    {
+                                        "id": 1456,
+                                        "validationTime": 48,
+                                        "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                                        "status": "transferred",
+                                        "expirationDate": "2019-01-14T14:10:37+0000"
+                                    },
+                                    {
+                                        "id": 1567,
+                                        "validationTime": 72,,
+                                        "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                                        "status": "valid",
+                                        "expirationDate": "2019-02-07T14:10:37+0000"
+                                    },
+                                    {
+                                        "id": 1560,
+                                        "validationTime": 72,
+                                        "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                                        "status": "valid",
+                                        "expirationDate": "2019-02-09T14:10:37+0000"
+                                    },
+                                    {
+                                        "id": 1568,
+                                        "validationTime": 48,
+                                        "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                                        "status": "inactive",
+                                        "expirationDate": ""
+                                    }
+                        ]},
+                        {
+                            "orderReference": "2341",
+                            "orderStatus": "pending",
+                            "cardsQuantity":0,
+                            "cards":[]
+                        } 
+            ]
+            
+            
+## Products [/api/products]
+
+### List All Products [GET]
+
+You will recieve a array of products objects.
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU=
+
++ Response 200 (application/json)
+
+ + Body
+
+            [
+                {
+                  "id": 1,
+                  "title": "Adult 24 hours",
+                  "validationTime": 24,
+                  "price": [
+                    {
+                      "currencyCode": "EUR",
+                      "price": 54
+                    },
+                    {
+                      "currencyCode": "DKK",
+                      "price": 64
+                    },
+                    {
+                      "currencyCode": "USD",
+                      "price": 74
+                    },
+                    {
+                      "currencyCode": "GBP",
+                      "price": 84
+                    }
+                  ]
+                },
+                {
+                  "id": 3,
+                  "title": "Adult 48 hours",
+                  "validationTime": 48,
+                  "category": {
+                    "description": "Adult",
+                    "id": 1
+                  },
+                  "price": [
+                    {
+                      "currencyCode": "EUR",
+                      "price": 49
+                    },
+                    {
+                      "currencyCode": "DKK",
+                      "price": 59
+                    },
+                    {
+                      "currencyCode": "USD",
+                      "price": 69
+                    },
+                    {
+                      "currencyCode": "GBP",
+                      "price": 79
+                    }
+                  ]
+                },
+                {
+                  "id": 5,
+                  "title": "Adult 72 hours",
+                  "validationTime": 72,
+                  "price": [
+                    {
+                      "currencyCode": "EUR",
+                      "price": 77
+                    },
+                    {
+                      "currencyCode": "DKK",
+                      "price": 87
+                    },
+                    {
+                      "currencyCode": "USD",
+                      "price": 97
+                    },
+                    {
+                      "currencyCode": "GBP",
+                      "price": 107
+                    }
+                  ]
+                },
+                {
+                  "id": 7,
+                  "title": "Adult 120 hours",
+                  "validationTime": 120,
+                  "price": [
+                    {
+                      "currencyCode": "EUR",
+                      "price": 77
+                    },
+                    {
+                      "currencyCode": "DKK",
+                      "price": 87
+                    },
+                    {
+                      "currencyCode": "USD",
+                      "price": 97
+                    },
+                    {
+                      "currencyCode": "GBP",
+                      "price": 107
+                    }
+                  ]
+                }
+              ]  
+            
+## Transfer Card [/api/cards/{id}/transfer{?_format}]
+
+### Transfer card [POST]
+
+Transfer a card to another device
+
+This will update device id on a current card in case this action has not been done before. A card can only be transferred once.
+
+olddeviceId - Validate that this id is the existing one on the cardid.
+
+newdeviceId - Device id to be set on cardId
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU=
+            X-CSRF-Token: EbQN0T46HLAUQMaPrV0IQ6GO0YtSsg5M4aTvBPXeoOc
+
+
+    + Body
+
+            {
+               "newDeviceId": "thisistheNewdeviceid",
+               "oldDeviceId": "thisismydeviceid"
+            }
+
++ Parameters
+    + id - cardid
+    + _format - json
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "cardId": 123,
+                "status": "transferred"
+                
+            }
+            
+## Redeem order [/api/order/{id}/redeem{?_format}]
+
+### Redeem order [POST]
+
+
+Redeem a order with orderReference
+
+This will add a deviceid on a existing order. A card can only be redeemed once.
+
+ORDER STATUSES:
+completed,pending
+
+CARD STATUSES:
+completed,pending
+
+
++ Request (application/json)
+    + Headers
+    
+            Authorization: Basic dmFsdGVjaDpId3Q2MFplOWFodFIqMlQlazZpTmkqNXU=
+            X-CSRF-Token: EbQN0T46HLAUQMaPrV0IQ6GO0YtSsg5M4aTvBPXeoOc
+    
+    + Body
+
+            {
+               "deviceId": "thisismydeviceid",
+               "email": "mail@email.com"
+            }
+
++ Parameters
+    + id - orderReference
+    + _format - json
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "orderReference":"AAAC123",
+                "orderStatus":"completed",
+                "cardsQty":2,
+                "cards": [
+                        {
+                            "id": 9999,
+                            "validationTime": 24,
+                            "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                            "status": "expired",
+                            "expirationDate": "2018-12-19T14:10:37+0000"
+                        },
+                        {
+                            "id": 1345,
+                            "validationTime": 48,
+                            "qrCodeUrl": "https://www.dropbox.com/s/xdwrod9uvj75s0e/qrcodeUrl.png?raw=1",
+                            "status": "valid",
+                            "expirationDate": "2020-12-19T14:10:37+0000"
+                        }
+                        
+## Notifications [/api/notifications]
+
+### List All Cards [GET]
+
++ Request (application/json)
+    
+    + Body
+
+            {
+               "userId": "123",
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "title": "Den ursprungliga Lorem Ipsum-texten",
+                    "userId": 123,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "dateStamp": "2019-02-09T14:10:37+0000"
+                },
+                {
+                    "id": 2,
+                    "title": "Den ursprungliga Lorem Ipsum-texten",
+                    "userId": 123,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "dateStamp": "2019-02-09T14:10:37+0000"
+                },
+                {
+                    "id": 3,
+                    "title": "Den ursprungliga Lorem Ipsum-texten",
+                    "userId": 123,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    "dateStamp": "2019-02-09T14:10:37+0000"
+                }
+            ]
