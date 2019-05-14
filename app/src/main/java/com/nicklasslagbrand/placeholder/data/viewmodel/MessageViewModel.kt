@@ -15,7 +15,7 @@ class MessageViewModel(
         fetchMessages()
     }
 
-    private fun fetchMessages(){
+    private fun fetchMessages() {
         addDisposable {
             getAllMessagessUseCase.call(RxUseCase.None)
                 .subscribe { result ->
@@ -29,13 +29,11 @@ class MessageViewModel(
     private fun handleMessages(messages: List<Message>) {
         eventLiveData.value = ConsumableEvent(Event.HideLoading)
         eventLiveData.value = ConsumableEvent(Event.ShowMessage(messages))
-
     }
 
     sealed class Event {
         data class ShowMessage(val messages: List<Message>) : Event()
         object ShowLoading : Event()
         object HideLoading : Event()
-
     }
 }

@@ -9,12 +9,13 @@ import java.util.concurrent.TimeUnit
 class SplashViewModel : RxBaseViewModel() {
     val completableLiveData = MutableLiveData<ConsumableEvent<Any>>()
 
-    fun start() {
+    fun start(isMessageSupressed: Boolean) {
         addDisposable {
             Completable.complete()
                 .delay(Constants.SPLASH_SCREEN_DURATION_SECONDS, TimeUnit.SECONDS, AndroidSchedulers.mainThread())
                 .subscribe {
-                    completableLiveData.value = ConsumableEvent(Any())
+                    if (isMessageSupressed)
+                        completableLiveData.value = ConsumableEvent(Any())
                 }
         }
     }

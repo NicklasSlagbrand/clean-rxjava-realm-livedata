@@ -27,15 +27,12 @@ class StartViewModel(
         // For now just update the state
         addDisposable { setUserConsentUseCase.call(true).subscribe() }
         eventsLiveData.value = ConsumableEvent(Event.DismissConsentDialog)
-
-
     }
 
     fun onDisagreeOnConsent() {
         // For now just update the state
         addDisposable { setUserConsentUseCase.call(false).subscribe() }
         eventsLiveData.value = ConsumableEvent(Event.DismissConsentDialog)
-
     }
 
     sealed class Event {

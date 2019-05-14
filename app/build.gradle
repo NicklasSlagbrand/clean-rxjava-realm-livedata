@@ -116,6 +116,10 @@ dependencies {
 
     implementation "com.getkeepsafe.taptargetview:taptargetview:$versions.taptargetview"
 
+    //Firebase
+    implementation "com.google.firebase:firebase-core:$versions.fbcore"
+    implementation "com.google.firebase:firebase-inappmessaging-display:$versions.fbInAppMessaging"
+
 
 //    Android Test
     androidTestImplementation "com.android.support.test:runner:$versions.supportRunner"
@@ -144,6 +148,12 @@ task performCheckAndFullBuild(type: GradleBuild) {
     tasks = ["clean", "gnagReport", "build"]
 }
 
+task performCodeCheck(type: GradleBuild) {
+    group "Build"
+    description "Runs Unit tests and build full app with all variants."
+    tasks = ["gnagReport"]
+}
+
 // if the build was triggered by the pull request then performs full build otherwise runs quick
 // build
 task performBuild(type: GradleBuild) {
@@ -166,3 +176,4 @@ tasks.register("setVersionNameIntoEnv") {
         print "Setting version name env variable: " + "envman add --key APP_VERSION_NAME --value ${versionNameForCI}".execute().text
     }
 }
+apply plugin: 'com.google.gms.google-services'

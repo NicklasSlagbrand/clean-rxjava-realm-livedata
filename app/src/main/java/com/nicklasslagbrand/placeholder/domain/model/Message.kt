@@ -7,5 +7,3 @@ data class Message(
     val description: String,
     val dateStamp: String
 )
-
-

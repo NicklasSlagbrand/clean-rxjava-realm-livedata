@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000">
+
+    <ImageView
+            android:id="@+id/iwMessage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="75dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_info"/>
+
+    <TextView
+            android:text="@string/consent_title_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMessageTitle"
+            style="@style/MuliExtraBoldTextAppearance"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/md_black_1000"
+            android:layout_marginStart="38dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="38dp"
+            app:layout_constraintTop_toBottomOf="@+id/iwMessage"/>
+
+    <TextView
+            android:text="@string/consent_long_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMessageDescrLong"
+            style="@style/MuliRegularTextAppearance"
+            android:textSize="15sp"
+            android:textColor="@color/md_black_1000"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvMessageTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="38dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="38dp"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMessage"
+            style="@style/StartScreen.AgreeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/close_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMessageDescrLong"
+            android:layout_marginTop="40dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

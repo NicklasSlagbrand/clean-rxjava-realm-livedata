@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="20dp"
+    android:layout_marginStart="10dp"
     android:layout_marginTop="10dp"
-    android:layout_marginEnd="20dp"
+    android:layout_marginEnd="10dp"
     android:layout_marginBottom="10dp"
-    android:elevation="10dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="10dp">
+    app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +16,8 @@
 
         <ImageView
             android:id="@+id/ivMessageImage"
-            android:layout_width="120dp"
+            android:padding="15dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_name"
@@ -26,21 +25,34 @@
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[3]" />
+            android:background="@color/primary"
+            tools:srcCompat="@drawable/ic_message" />
 
         <TextView
-            android:id="@+id/tvMessageTitle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center_vertical|start"
-            android:textAppearance="@style/MuliExtraBoldTextAppearance"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivMessageImage"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Tivoli" />
+                android:id="@+id/tvMessageTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="@style/MuliExtraBoldTextAppearance"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMessageImage"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+
+        <TextView
+                android:id="@+id/tvMessageDescription"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/MuliExtraBoldTextAppearance"
+                android:textSize="8sp"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessageTitle"
+                app:layout_constraintStart_toEndOf="@+id/ivMessageImage"
+                tools:text="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum  "/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

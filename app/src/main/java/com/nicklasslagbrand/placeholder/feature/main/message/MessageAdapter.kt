@@ -25,8 +25,6 @@ class MessageAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount() = items.size
 
-
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = items[position]
         (holder as MessageViewHolder).bind(item)
@@ -37,12 +35,12 @@ class MessageAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
             itemView.apply {
                 tvMessageTitle.text = message.title
-                ivMessageImage.loadImageWithFitCenterTransform("https://via.placeholder.com/150")
+                tvMessageDescription.text = message.description
+                ivMessageImage.loadImageWithFitCenterTransform(resources.getDrawable(R.drawable.ic_message))
                 setOnClickListener {
                     clickListener(message)
                 }
             }
-
         }
     }
 }

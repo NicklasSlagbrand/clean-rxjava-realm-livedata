@@ -18,7 +18,6 @@ class MessageActivity : BaseActivity() {
     private val viewModel: MessageViewModel by viewModel()
     private var messageAdapter: MessageAdapter? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_messages)
@@ -26,9 +25,7 @@ class MessageActivity : BaseActivity() {
         initViews()
 
         subscribeToLiveData()
-
     }
-
 
     override fun onResume() {
         super.onResume()
@@ -65,23 +62,19 @@ class MessageActivity : BaseActivity() {
     private fun initViews() {
         messageAdapter = MessageAdapter().apply {
             clickListener = {
-                //TODO: load message details screen
             }
         }
         rvMessageList.adapter = messageAdapter
-
     }
 
-    private fun handleMessages(messages: List<Message>){
+    private fun handleMessages(messages: List<Message>) {
         rvMessageList.visible()
         messageAdapter?.setItems(messages)
     }
-
 
     companion object {
         fun startActivity(context: Context) {
             context.startActivity(Intent(context, MessageActivity::class.java))
         }
     }
-
 }
